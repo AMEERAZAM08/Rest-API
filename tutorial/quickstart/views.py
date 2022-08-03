@@ -2,8 +2,7 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 from quickstart.serializers import UserSerializer, GroupSerializer
-
-
+from  django.views.decorators.csrf import csrf_exempt
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -20,3 +19,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+@csrf_exempt
+def add():
+    return "Ameer"
