@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User, Group
+from django.http import JsonResponse
 from rest_framework import viewsets
 from rest_framework import permissions
 from quickstart.serializers import UserSerializer, GroupSerializer
@@ -22,4 +23,5 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 @csrf_exempt
 def add():
-    return "Ameer"
+    #return AMeer  in json  
+    return JsonResponse({"name":"Ameer","age":25})
