@@ -1,2 +1,3 @@
 import streamlit as st  
-ulr=
+ulr="https:localhost:8000"
+st.write(ulr)
